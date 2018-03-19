@@ -156,7 +156,7 @@ namespace CodeFormatter
     /rule(+|-)      - Enable (default) or disable the specified rule
     /rules          - List the available rules
     /verbose        - Verbose output
-    /help           - Displays this usage message (short form: /?)
+    /help           - Displays this usage message (also: /? or -?)
 ";
 
         public static void PrintUsage()
@@ -257,7 +257,7 @@ namespace CodeFormatter
                 {
                     return CommandLineParseResult.CreateSuccess(CommandLineOptions.ListRules);
                 }
-                else if (comparer.Equals(arg, "/?") || comparer.Equals(arg, "/help"))
+                else if (comparer.Equals(arg, "-?") || comparer.Equals(arg, "/?") || comparer.Equals(arg, "/help"))
                 {
                     return CommandLineParseResult.CreateSuccess(CommandLineOptions.ShowHelp);
                 }
